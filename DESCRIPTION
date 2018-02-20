@@ -1,0 +1,13 @@
+Package: MyUtils
+Title: Functions usefull
+Version: 0.0.1
+Authors@R: person("Weicheng", "Lee", email = "itsaquestion@gmail.com", role = c("aut", "cre"))
+Description: Functions for my own personal use
+Depends: R (>= 3.3.3)
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat
+RoxygenNote: 6.0.1
+Imports: zoo,
+    xts
