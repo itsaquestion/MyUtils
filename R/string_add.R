@@ -18,3 +18,4 @@
 `%+%.default` <- function (a, b) {
   paste0(as.character(a),as.character(b))
 }
+

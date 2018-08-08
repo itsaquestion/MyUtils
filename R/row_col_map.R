@@ -20,8 +20,10 @@ colMap = function(x,...){
   UseMethod("colMap",x)
 }
 
+
+
 #' @export
-colMap.data.frame = function(x, f){
+colMap.default = function(x, f){
   result = list()
   for(i in 1:ncol(x)){
     result[[i]] = f(x[,i])
@@ -30,3 +32,10 @@ colMap.data.frame = function(x, f){
   colnames(result) = colnames(x)
   result
 }
+
+#' @export
+colMap.data.frame = colMap.default
+
+#' @export
+colMap.xts = colMap.default
+
