@@ -1,41 +1,53 @@
+
+
 #' @export
-rowMap = function(x,...){
-  UseMethod("rowMap",x)
+colMap = function(x, ...) {
+  UseMethod("colMap", x)
 }
 
 #' @export
-rowMap.data.frame = function(x, f){
-  result = list()
-  for(i in 1:nrow(x)){
-    result[[i]] = f(x[i,])
+colMap.default = function(x, .f, ...) {
+  tmp = vector("list", length = ncol(x))
+  for (i in 1:ncol(x)) {
+    tmp[[i]] = .f(x[, i])
   }
-  result = Reduce(rbind,result)
-  rownames(result) = NULL
-  result
+  ret = Reduce(cbind, tmp)
+  colnames(ret) = colnames(x)
+  ret
 }
 
-
 #' @export
-colMap = function(x,...){
-  UseMethod("colMap",x)
+colMap.data.frame = function(x, .f, ...) {
+  ret = data.frame(colMap.default(x, .f, ...))
+  ret
 }
 
-
+#' @export
+rowMap = function(x, ...) {
+  UseMethod("rowMap", x)
+}
 
 #' @export
-colMap.default = function(x, f){
-  result = list()
-  for(i in 1:ncol(x)){
-    result[[i]] = f(x[,i])
+rowMap.default = function(x, .f, col_names = NULL, ...) {
+  tmp = vector("list", length = nrow(x))
+  for (i in 1:nrow(x)) {
+    tmp[[i]] = .f(x[i,])
   }
-  result = Reduce(cbind,result)
-  colnames(result) = colnames(x)
-  result
+  ret = Reduce(rbind, tmp)
+  if (!is.null(col_names)) { colnames(ret) = col_names }
+  ret
 }
 
 #' @export
-colMap.data.frame = colMap.default
+rowMap.xts = function(x, .f, ...) {
+  ret = rowMap.default(x, .f, ...)
+  as.xts(ret, order.by = index(x))
+}
 
 #' @export
-colMap.xts = colMap.default
-
+rowMap.data.frame = function(x, .f, ...) {
+  ret = rowMap.default(x, .f, ...)
+  rownames(ret) = NULL
+  #print(ret)
+  as.data.frame(ret, row.names = NULL)
+}
