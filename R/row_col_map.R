@@ -7,19 +7,18 @@ colMap = function(x, ...) {
 
 #' @export
 colMap.default = function(x, .f, ...) {
-  tmp = vector("list", length = ncol(x))
-  for (i in 1:ncol(x)) {
-    tmp[[i]] = .f(x[, i])
-  }
-  ret = Reduce(cbind, tmp)
+  #  tmp = vector("list", length = ncol(x))
+  #  for (i in 1:ncol(x)) {
+  #    tmp[[i]] = .f(x[, i])
+  #  }
+  ret = Reduce(cbind, lapply(x, .f, ...))
   colnames(ret) = colnames(x)
   ret
 }
 
 #' @export
 colMap.data.frame = function(x, .f, ...) {
-  ret = data.frame(colMap.default(x, .f, ...))
-  ret
+  data.frame(colMap.default(x, .f, ...))
 }
 
 #' @export
@@ -41,7 +40,11 @@ rowMap.default = function(x, .f, col_names = NULL, ...) {
 #' @export
 rowMap.xts = function(x, .f, ...) {
   ret = rowMap.default(x, .f, ...)
-  as.xts(ret, order.by = index(x))
+  if (!xts::is.xts(ret)) {
+    ret = as.xts(ret, order.by = index(x))
+  }
+  #as.xts(ret, order.by = xts::index(x))
+  ret
 }
 
 #' @export

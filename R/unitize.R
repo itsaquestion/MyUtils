@@ -9,16 +9,18 @@ unitize.xts = function(x, target.date = NULL) {
   if (!is.null(target.date)) {
     line = x[target.date %+% "::"] %>% first()
 
-    ret = rowApply(x, function(x) {
+    ret = rowMap(x, function(x) {
       #x = last(metal.price)
       x / as.vector(line)
     })
 
   } else {
     ii = data.frame(x) %>% complete.cases
+    #x = x[ii]
     first.ii = which(ii & !lag(ii))[1]
+    if (is.na(first.ii)) { first.ii = 1 }
     first.line = as.numeric(x[first.ii,])
-    ret = rowApply(x, function(x) { x / first.line })
+    ret = rowMap(x, function(x) { x / first.line })
   }
 
   ret
