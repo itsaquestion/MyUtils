@@ -4,7 +4,7 @@
 \alias{loadFromRedis}
 \title{Title}
 \usage{
-loadFromRedis(key, host = NULL, password = NULL)
+loadFromRedis(key, host = NULL, port = 6379, password = NULL)
 }
 \arguments{
 \item{password}{}

@@ -4,7 +4,8 @@
 \alias{saveToRedis}
 \title{saveToRedis}
 \usage{
-saveToRedis(x, key = NULL, host = NULL, password = NULL)
+saveToRedis(x, key = NULL, host = NULL, port = 6379,
+  password = NULL)
 }
 \arguments{
 \item{password}{}

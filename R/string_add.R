@@ -14,8 +14,4 @@
   paste0(a,b)
 }
 
-#' @export
-`%+%.default` <- function (a, b) {
-  paste0(as.character(a),as.character(b))
-}
 
