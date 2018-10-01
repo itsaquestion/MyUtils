@@ -5,7 +5,7 @@ print.xts = function(x, max.lines = 10, ...){
     tt = tail(x, max.lines/2) %>% as.data.frame()
     #colnames(tt) = NULL
     print(hh)
-    cat("  ... ...")
+    cat("  ... ...\n")
     print(tt)
     cat("  Lines = ",length(x))
   }else{
