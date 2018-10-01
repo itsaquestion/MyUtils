@@ -1,6 +1,6 @@
 Package: MyUtils
 Title: Usefull Functions 
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: person("Weicheng", "Li", email = "itsaquestion@gmail.com", role = c("aut", "cre"))
 Description: Functions for my own personal use
 Depends: R (>= 3.3.3)
@@ -11,5 +11,4 @@ Suggests: testthat
 RoxygenNote: 6.1.0.9000
 Imports: zoo,
     xts,
-	rredis,
 	purrr
