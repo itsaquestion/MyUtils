@@ -8,6 +8,8 @@
 #'
 #' @examples
 qSave = function(x, path = "data_output") {
+	object_name = deparse(substitute(x))
+	if (!exists(object_name)) { stop(glue::glue("object \"{object_name}\" not exists.")) }
 	if (!dir.exists(path)) { dir.create(path) }
 	saveRDS(x, glue::glue("{path}/{name}.RDS", name = deparse(substitute(x))))
 }
@@ -28,3 +30,5 @@ qLoad = function(x, path = "data_output", env = parent.frame(n = 1)) {
 	assign(name, ret, envir = env)
 	invisible(ret)
 }
+
+

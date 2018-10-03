@@ -12,4 +12,4 @@ print.xts = function(x, max.lines = 10, show.all = F,...){
     print(as.data.frame(x))
   }
   
-}
+} 
