@@ -21,5 +21,7 @@ test_that("string begins and ends: expections", {
 
 
 test_that("conjoint strings ", {
-  expect_equal("hello" %+% " world!", "hello world!")
+	expect_equal("hello" %+% " world!", "hello world!")
+	expect_equal(as.Date("2016-01-01") %+% ", ok", "2016-01-01, ok")
 })
+

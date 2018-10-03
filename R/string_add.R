@@ -1,6 +1,10 @@
 #' conjoint two strings
 #' @usage x \%+\% y
 #' @return paste0(x,y)
+convertAndPaste = function(a, b) {
+	paste0(as.character(a), as.character(b))
+}
+
 #' @export
 #' @examples
 #' "hello" %+% " world!"
@@ -10,8 +14,11 @@
 }
 
 #' @export
-`%+%.character` <- function (a, b) {
-  paste0(a,b)
-}
+`%+%.character` <- convertAndPaste
 
+#' @export
+`%+%.Date` <- convertAndPaste
+
+#' @export
+`%+%.POSIXct` <- convertAndPaste
 
