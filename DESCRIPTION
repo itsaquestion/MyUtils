@@ -1,6 +1,6 @@
 Package: MyUtils
 Title: Usefull Functions 
-Version: 1.2.1
+Version: 1.2.2
 Authors@R: person("Weicheng", "Li", email = "itsaquestion@gmail.com", role = c("aut", "cre"))
 Description: Functions for my own personal use
 Depends: R (>= 3.3.3)
