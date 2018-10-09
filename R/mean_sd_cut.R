@@ -17,6 +17,9 @@ sd_cut = function(x, cut_percent = 1) {
 }
 
 cleanX = function(x, cut_percent = 1) {
+
+	x = as.vector(x)
+	
 	x_fix = x[!is.na(x)]
 	x_fix = x_fix[order(x_fix)]
 
