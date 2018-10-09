@@ -24,5 +24,5 @@ cleanX = function(x, cut_percent = 1) {
 
 	ret = x_fix[(n + 1):(length(x_fix) - n)]
 
-	ret
+	ret 
 }
