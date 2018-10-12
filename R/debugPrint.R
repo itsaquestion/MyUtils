@@ -2,7 +2,7 @@
 #' @export
 debugPrint = function(...) {
 	if (.debug_mode) {
-		cat("DEBUG > ", ..., "\n")
+		cat("DEBUG >", ..., "\n")
 	}
 }
 
