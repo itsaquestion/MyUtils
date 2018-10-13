@@ -7,7 +7,7 @@ print.xts = function(x, max.lines = 10, show.all = F,...){
     print(hh)
     cat("  ... ...\n")
     print(tt)
-    cat("  Lines = ",length(x))
+    cat("  Lines = ",length(x),"\n")
   }else{
     print(as.data.frame(x))
   }
