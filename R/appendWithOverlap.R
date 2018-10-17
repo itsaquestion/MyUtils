@@ -21,7 +21,8 @@ appendWithOverlap = function(x, ...){
 #' @export
 #'
 #' @examples
-appendWithOverlap.xts = function(x, y){
+appendWithOverlap.xts = function(x, y) {
+	NullCheck::stopNull()
   y.first = first(index(y))
   ii = which(index(x) == y.first)
   if(length(ii) > 0){

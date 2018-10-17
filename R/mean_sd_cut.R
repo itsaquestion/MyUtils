@@ -1,7 +1,7 @@
 
 #' @export
 mean_cut = function(x, cut_percent = 1) {
-	
+	NullCheck::stopNull()
 	x_fix = cleanX(x, cut_percent)
 
 	mean(x_fix)
@@ -9,7 +9,7 @@ mean_cut = function(x, cut_percent = 1) {
 
 #' @export
 sd_cut = function(x, cut_percent = 1) {
-
+	NullCheck::stopNull()
 	x_fix = cleanX(x, cut_percent)
 
 	sd(x_fix)
@@ -17,7 +17,7 @@ sd_cut = function(x, cut_percent = 1) {
 }
 
 cleanX = function(x, cut_percent = 1) {
-
+	NullCheck::stopNull()
 	x = as.vector(x)
 	
 	x_fix = x[!is.na(x)]

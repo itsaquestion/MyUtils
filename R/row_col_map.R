@@ -10,7 +10,8 @@ colMap.default = function(x, .f, ...) {
   #  tmp = vector("list", length = ncol(x))
   #  for (i in 1:ncol(x)) {
   #    tmp[[i]] = .f(x[, i])
-  #  }
+	#  }
+	NullCheck::stopNull()
   ret = Reduce(cbind, lapply(x, .f, ...))
   colnames(ret) = colnames(x)
   ret
@@ -28,6 +29,7 @@ rowMap = function(x, ...) {
 
 #' @export
 rowMap.default = function(x, .f, col_names = NULL, ...) {
+	NullCheck::stopNull(except ="col_names")
   tmp = vector("list", length = nrow(x))
   for (i in 1:nrow(x)) {
     tmp[[i]] = .f(x[i,])

@@ -11,7 +11,8 @@
 #' ## [1] FALSE 
 #' @export
 isDateString = function(x) {
-    pattern1 = '\\b\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|2[0-9]|3[0-1])$'
-    tdBool = grepl(pattern1, x)
-    return(tdBool)
+	NullCheck::stopNull()
+  pattern1 = '\\b\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|2[0-9]|3[0-1])$'
+  tdBool = grepl(pattern1, x)
+  return(tdBool)
 }

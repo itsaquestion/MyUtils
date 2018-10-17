@@ -8,6 +8,7 @@
 #'
 #' @examples
 qSave = function(x, path = "data_output") {
+	NullCheck::stopNull()
 	object_name = deparse(substitute(x))
 	if (!exists(object_name)) { stop(glue::glue("object \"{object_name}\" not exists.")) }
 	if (!dir.exists(path)) { dir.create(path) }
@@ -25,6 +26,7 @@ qSave = function(x, path = "data_output") {
 #'
 #' @examples
 qLoad = function(x, path = "data_output", env = parent.frame(n = 1)) {
+	NullCheck::stopNull()
 	name = deparse(substitute(x))
 	ret = readRDS(glue::glue("{path}/{name}.RDS"))
 	assign(name, ret, envir = env)
@@ -34,12 +36,14 @@ qLoad = function(x, path = "data_output", env = parent.frame(n = 1)) {
 
 #' @export
 sSave = function(x, name, path = "data_output") {
+	NullCheck::stopNull()
 	if (!dir.exists(path)) { dir.create(path) }
 	saveRDS(x, glue::glue("{path}/{name}.RDS", name = name))
 }
 
 #' @export
 sLoad = function(name, path = "data_output") {
+	NullCheck::stopNull()
 	ret = readRDS(glue::glue("{path}/{name}.RDS"))
 	ret
 }

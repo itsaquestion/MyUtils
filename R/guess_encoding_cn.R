@@ -7,6 +7,7 @@
 #'
 #' @examples
 guess_encoding_cn = function(x) {
+	NullCheck::stopNull()
 	guess = readr::guess_encoding(x)
 	guess = filter(guess, startsWith(guess$encoding, "GB") | guess$encoding == "UTF-8")
 	guess$encoding[1]
