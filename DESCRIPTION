@@ -1,6 +1,6 @@
 Package: MyUtils
 Title: Usefull Functions 
-Version: 1.6.1
+Version: 1.7.0
 Authors@R: person("Weicheng", "Li", email = "itsaquestion@gmail.com", role = c("aut", "cre"))
 Description: Functions for my own personal use
 Depends: R (>= 3.3.3)
@@ -8,7 +8,7 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Suggests: testthat
-RoxygenNote: 6.1.0.9000
+RoxygenNote: 6.1.1
 Imports: zoo,
     xts,
 	purrr

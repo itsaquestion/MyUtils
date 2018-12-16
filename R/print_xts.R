@@ -1,6 +1,6 @@
 #' @export
 print.xts = function(x, max.lines = 10, show.all = F, ...) {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
 	if (nrow(x) > (max.lines + 2) & !show.all) {
     hh = head(x, max.lines/2) %>% as.data.frame()
     tt = tail(x, max.lines/2) %>% as.data.frame()
