@@ -4,8 +4,8 @@
 #'
 #' @return object names
 #' @export 
-#' @import dplyr, knirt
-#'
+#' @import dplyr
+#' @import knirt
 #' @examples
 #' whos()
 whos <- function(no_functions = T) {
