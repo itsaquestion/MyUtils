@@ -1,6 +1,6 @@
 Package: MyUtils
 Title: Usefull Functions 
-Version: 1.7.3
+Version: 1.7.4
 Authors@R: person("Weicheng", "Li", email = "itsaquestion@gmail.com", role = c("aut", "cre"))
 Description: Functions for my own personal use
 Depends: R (>= 3.3.3)
@@ -9,6 +9,10 @@ Encoding: UTF-8
 LazyData: true
 Suggests: testthat
 RoxygenNote: 6.1.1
-Imports: zoo,
-    xts,
-	purrr
+Imports: RCurl,
+        dplyr,
+        knitr,
+        stargazer,
+        xts,
+        zoo,
+        purrr
