@@ -22,7 +22,7 @@ appendWithOverlap = function(x, ...){
 #'
 #' @examples
 appendWithOverlap.xts = function(x, y) {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
   y.first = first(index(y))
   ii = which(index(x) == y.first)
   if(length(ii) > 0){

@@ -4,9 +4,8 @@
 #' @export
 #'
 #' @examples
-#' round_df
 round_df <- function(df, digits = 2) {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
   mutate_if(df, is.numeric, round, digits=digits)
 }
 
@@ -16,5 +15,4 @@ round_df <- function(df, digits = 2) {
 #' @export
 #'
 #' @examples
-#' round.data.frame
 round.data.frame = round_df

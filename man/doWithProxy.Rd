@@ -14,6 +14,3 @@ doWithProxy(cmd, proxy_url = "127.0.0.1", port = 1080)
 \description{
 doWithProxy
 }
-\examples{
-doWithProxy(GET("http://www.google.com"))
-}

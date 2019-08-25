@@ -34,14 +34,14 @@ qLoad = function(x, path = "data_output", env = parent.frame(n = 1)) {
 
 #' @export
 sSave = function(x, name, path = "data_output") {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
 	if (!dir.exists(path)) { dir.create(path) }
 	saveRDS(x, glue::glue("{path}/{name}.RDS", name = name))
 }
 
 #' @export
 sLoad = function(name, path = "data_output") {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
 	ret = readRDS(glue::glue("{path}/{name}.RDS"))
 	ret
 }

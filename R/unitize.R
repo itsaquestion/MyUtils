@@ -5,7 +5,7 @@ unitize = function(x, ...) {
 
 #' @export
 unitize.xts = function(x, target.date = NULL) {
-	NullCheck::stopNull(except = "target.date")
+	#NullCheck::stopNull(except = "target.date")
   ret = NULL
   if (!is.null(target.date)) {
     line = x[target.date %+% "::"] %>% first()

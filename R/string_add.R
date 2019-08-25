@@ -2,7 +2,7 @@
 #' @usage x \%+\% y
 #' @return paste0(x,y)
 convertAndPaste = function(a, b) {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
 	paste0(as.character(a), as.character(b))
 }
 

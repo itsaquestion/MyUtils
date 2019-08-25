@@ -7,7 +7,7 @@
 #' @importFrom xts is.xts
 #' @importFrom zoo index
 convertPOSIXct2Date = function(x) {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
     if (!xts::is.xts(x)) {
         stop("convertPOSIXct2Date: param must be a xts object!")
     }

@@ -9,6 +9,3 @@ round_df(df, digits = 2)
 \description{
 round_df
 }
-\examples{
-round_df
-}

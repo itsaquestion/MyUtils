@@ -9,6 +9,3 @@
 \description{
 round.data.frame
 }
-\examples{
-round.data.frame
-}

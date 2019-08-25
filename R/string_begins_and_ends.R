@@ -12,7 +12,7 @@
 #' strBeginsWith("hello","lo")
 #' ## [1] FALSE
 strBeginsWith = function(x, y) {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
     if (is.na(y)) { stop("Error: Y is NA!") }
     hl = nchar(x)
     nl = nchar(y)
@@ -39,7 +39,7 @@ strBeginsWith = function(x, y) {
 #' ## [1] FALSE
 
 strEndsWith = function(x, y) {
-	NullCheck::stopNull()
+	#NullCheck::stopNull()
     if (is.na(y)) { stop("Error: Y is NA!") }
     hl = nchar(x)
     nl = nchar(y)
